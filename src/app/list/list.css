@@ -1,0 +1,13 @@
+.list-container {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.list-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.list-container li {
+  margin: 4px 0;
+}

@@ -1,12 +1,15 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { RandomComponent } from './random/random';
+import { ListComponent } from './list/list';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RandomComponent, ListComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('my-angular-app');
+export class AppComponent {
+  title: string = 'my-angular-app';
+  subtitle: string = 'Moja pierwsza aplikacja w Angularze :)';
 }

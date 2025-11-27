@@ -1,0 +1,12 @@
+<div class="random-container">
+  <p>Maksymalna wartość: {{ max }}</p>
+
+  <button (click)="generate()">Wylosuj liczbę</button>
+
+  <div *ngIf="current !== undefined">
+    <p>Aktualnie wylosowana liczba: <strong>{{ current }}</strong></p>
+    <p [ngStyle]="{ color: isLowerOrEqualHalf ? 'green' : 'red' }">
+      {{ comment }}
+    </p>
+  </div>
+</div>

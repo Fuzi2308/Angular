@@ -1,0 +1,20 @@
+<h2>Lista osób</h2>
+
+<p>
+  <a routerLink="/add">Dodaj nową osobę</a>
+</p>
+
+<ul>
+  @for (person of persons; track $index; let i = $index) {
+    <li>
+      {{ person.firstName }} {{ person.familyName }} (wiek:
+      {{ person.age ?? 'brak' }})
+      –
+      <a [routerLink]="['/details', i]">szczegóły</a>
+      |
+      <a href="#" (click)="delete(i); $event.preventDefault()">usuń</a>
+    </li>
+  }
+</ul>
+
+<p *ngIf="persons.length === 0">Brak danych – dodaj pierwszą osobę.</p>

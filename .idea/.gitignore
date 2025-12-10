@@ -1,0 +1,16 @@
+# Java / Spring
+demo/target
+demo/*.class
+
+# Angular / Node
+Angular/node_modules
+Angular/dist
+
+# IDE (IntelliJ, VSCode itp.)
+.idea
+*.iml
+.vscode
+
+# Systemowe śmieci
+.DS_Store
+Thumbs.db

@@ -1,0 +1,20 @@
+### Lista osób (na razie powinna być pusta)
+GET http://localhost:8080/api/persons
+
+### Dodaj osobę
+POST http://localhost:8080/api/persons
+Content-Type: application/json
+
+{
+"firstName": "Jan",
+"familyName": "Kowalski",
+"age": 30,
+"address": {
+"city": "Szczecin",
+"street": "Lipowa 1",
+"postCode": "70-100"
+}
+}
+
+### Pobierz osobę o id 1
+GET http://localhost:8080/api/persons/1

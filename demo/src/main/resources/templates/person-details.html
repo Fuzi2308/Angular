@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Osoba</title>
+</head>
+<body>
+<h1>Szczegóły osoby</h1>
+
+<p>
+    <strong>Imię:</strong>
+    <span th:text="${person.firstName}"></span>
+</p>
+<p>
+    <strong>Nazwisko:</strong>
+    <span th:text="${person.familyName}"></span>
+</p>
+<p>
+    <strong>Index w liście:</strong>
+    <span th:text="${index}"></span>
+</p>
+
+<p>
+    <a th:href="@{'/people'}">Powrót do listy</a>
+</p>
+
+</body>
+</html>

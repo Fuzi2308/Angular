@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista osób</title>
+</head>
+<body>
+<h1>Lista osób</h1>
+
+<table border="1">
+    <tr>
+        <th>#</th>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Szczegóły</th>
+    </tr>
+    <tr th:each="person, iterStat : ${people}">
+        <td th:text="${iterStat.index}"></td>
+        <td th:text="${person.firstName}"></td>
+        <td th:text="${person.familyName}"></td>
+        <td>
+            <a th:href="@{'/people/' + ${iterStat.index}}">Pokaż</a>
+        </td>
+    </tr>
+</table>
+
+<p>
+    <a th:href="@{'/people/add'}">Dodaj nową osobę</a>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+### GET all people
+GET http://localhost:53712/api/people
+
+### GET person 0
+GET http://localhost:53712/api/people/0
+
+### GET person not found
+GET http://localhost:53712/api/people/999
+
+### POST valid
+POST http://localhost:53712/api/people
+Content-Type: application/json
+
+{
+  "firstName": "Marek",
+  "familyName": "Lewandowski"
+}
+
+### POST invalid
+POST http://localhost:53712/api/people
+Content-Type: application/json
+
+{
+  "firstName": "Marek",
+  "familyName":
+}
+
+### PUT valid
+PUT http://localhost:53712/api/people/0
+Content-Type: application/json
+
+{
+  "firstName": "Janusz",
+  "familyName": "Nowy"
+}
+
+### PUT invalid
+PUT http://localhost:53712/api/people/999
+Content-Type: application/json
+
+{
+  "firstName": "X",
+  "familyName": "Y"
+}
+
+### DELETE valid
+DELETE http://localhost:53712/api/people/0
+
+### DELETE invalid
+DELETE http://localhost:53712/api/people/0

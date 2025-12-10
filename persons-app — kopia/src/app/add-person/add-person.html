@@ -1,0 +1,43 @@
+<h1 *ngIf="!isEdit">Dodaj osobę</h1>
+<h1 *ngIf="isEdit">Edytuj osobę</h1>
+
+<p *ngIf="errorMessage">{{ errorMessage }}</p>
+
+<form (ngSubmit)="save()">
+  <div>
+    <label>Imię</label>
+    <input [(ngModel)]="person.firstName" name="firstName" required>
+  </div>
+
+  <div>
+    <label>Nazwisko</label>
+    <input [(ngModel)]="person.familyName" name="familyName" required>
+  </div>
+
+  <div>
+    <label>Wiek</label>
+    <input type="number" [(ngModel)]="person.age" name="age">
+  </div>
+
+  <fieldset>
+    <legend>Adres</legend>
+
+    <div>
+      <label>Miasto</label>
+      <input [(ngModel)]="person.address!.city" name="city">
+    </div>
+
+    <div>
+      <label>Ulica</label>
+      <input [(ngModel)]="person.address!.street" name="street">
+    </div>
+
+    <div>
+      <label>Kod pocztowy</label>
+      <input [(ngModel)]="person.address!.postCode" name="postCode">
+    </div>
+  </fieldset>
+
+  <button type="submit">Zapisz</button>
+  <button type="button" (click)="cancel()">Anuluj</button>
+</form>

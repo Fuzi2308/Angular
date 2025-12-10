@@ -1,0 +1,33 @@
+<h1>Lista osób</h1>
+
+<p *ngIf="errorMessage">{{ errorMessage }}</p>
+<p *ngIf="loading">Ładowanie danych...</p>
+
+<table *ngIf="!loading && people.length > 0; else empty">
+  <thead>
+  <tr>
+    <th>Imię</th>
+    <th>Nazwisko</th>
+    <th>Wiek</th>
+    <th>Miasto</th>
+    <th>Akcje</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of people">
+    <td>{{ p.firstName }}</td>
+    <td>{{ p.familyName }}</td>
+    <td>{{ p.age }}</td>
+    <td>{{ p.address?.city }}</td>
+    <td>
+      <button (click)="goToDetails(p.id)">Szczegóły</button>
+      <button (click)="goToEdit(p.id)">Edytuj</button>
+      <button (click)="delete(p.id)">Usuń</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<ng-template #empty>
+  <p *ngIf="!loading && !errorMessage">Brak osób w bazie.</p>
+</ng-template>

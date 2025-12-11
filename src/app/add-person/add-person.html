@@ -1,49 +1,82 @@
-<h2>Dodaj osobę</h2>
+<!-- src/app/add-person/add-person.html -->
+<mat-card class="form-card">
+  <mat-card-header>
+    <mat-card-title>Dodaj osobę</mat-card-title>
+  </mat-card-header>
 
-<form (ngSubmit)="save()">
-  <div>
-    <label>Imię:
-      <input type="text" [(ngModel)]="person.firstName" name="firstName" />
-    </label>
-  </div>
-
-  <div>
-    <label>Nazwisko:
-      <input type="text" [(ngModel)]="person.familyName" name="familyName" />
-    </label>
-  </div>
-
-  <div>
-    <label>Wiek:
-      <input type="number" [(ngModel)]="person.age" name="age" />
-    </label>
-  </div>
-
-  <fieldset>
-    <legend>Adres</legend>
-
-    <div>
-      <label>Miasto:
-        <input type="text" [(ngModel)]="person.address.city" name="city" />
-      </label>
-    </div>
-
-    <div>
-      <label>Ulica:
-        <input type="text" [(ngModel)]="person.address.street" name="street" />
-      </label>
-    </div>
-
-    <div>
-      <label>Kod pocztowy:
+  <mat-card-content>
+    <form (ngSubmit)="save()" class="person-form">
+      <mat-form-field appearance="outline">
+        <mat-label>Imię</mat-label>
         <input
+          matInput
+          type="text"
+          [(ngModel)]="person.firstName"
+          name="firstName"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Nazwisko</mat-label>
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="person.familyName"
+          name="familyName"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Wiek</mat-label>
+        <input
+          matInput
+          type="number"
+          [(ngModel)]="person.age"
+          name="age"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Miasto</mat-label>
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="person.address.city"
+          name="city"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Ulica</mat-label>
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="person.address.street"
+          name="street"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Kod pocztowy</mat-label>
+        <input
+          matInput
           type="text"
           [(ngModel)]="person.address.postCode"
           name="postCode"
         />
-      </label>
-    </div>
-  </fieldset>
+      </mat-form-field>
 
-  <button type="submit">Zapisz</button>
-</form>
+      <div class="form-actions">
+        <button mat-stroked-button color="primary" routerLink="/">
+          <mat-icon>arrow_back</mat-icon>
+          Anuluj
+        </button>
+
+        <button mat-raised-button color="accent" type="submit">
+          <mat-icon>save</mat-icon>
+          Zapisz
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

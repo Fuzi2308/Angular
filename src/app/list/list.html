@@ -1,20 +1,55 @@
-<h2>Lista osób</h2>
+<mat-card class="list-card">
+  <mat-card-header>
+    <mat-card-title>Lista osób</mat-card-title>
+    <mat-card-subtitle>
+      Aktualnie zapisane rekordy w LocalStorage
+    </mat-card-subtitle>
+  </mat-card-header>
 
-<p>
-  <a routerLink="/add">Dodaj nową osobę</a>
-</p>
+  <mat-card-content>
+    <div class="list-actions">
+      <button mat-raised-button color="primary" routerLink="/add">
+        <mat-icon>person_add</mat-icon>
+        Dodaj nową osobę
+      </button>
+    </div>
 
-<ul>
-  @for (person of persons; track $index; let i = $index) {
-    <li>
-      {{ person.firstName }} {{ person.familyName }} (wiek:
-      {{ person.age ?? 'brak' }})
-      –
-      <a [routerLink]="['/details', i]">szczegóły</a>
-      |
-      <a href="#" (click)="delete(i); $event.preventDefault()">usuń</a>
-    </li>
-  }
-</ul>
+    <mat-list *ngIf="persons.length > 0; else empty">
+      <mat-list-item *ngFor="let person of persons; let i = index">
+        <!-- Tytuł wiersza -->
+        <div matListItemTitle>
+          {{ person.firstName }} {{ person.familyName }}
+        </div>
 
-<p *ngIf="persons.length === 0">Brak danych – dodaj pierwszą osobę.</p>
+        <!-- Druga linia -->
+        <div matListItemLine>
+          Wiek: {{ person.age ?? 'brak' }}
+        </div>
+
+        <!-- Akcje po prawej stronie -->
+        <span matListItemMeta class="person-actions">
+          <button
+            mat-stroked-button
+            color="accent"
+            [routerLink]="['/details', i]"
+          >
+            Szczegóły
+          </button>
+
+          <button
+            mat-icon-button
+            color="warn"
+            (click)="delete(i); $event.preventDefault()"
+            aria-label="Usuń osobę"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </span>
+      </mat-list-item>
+    </mat-list>
+
+    <ng-template #empty>
+      <p class="empty-state">Brak danych – dodaj pierwszą osobę.</p>
+    </ng-template>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,20 @@
+/* src/app/app.css */
+
+.app-toolbar {
+  font-size: 18px;               /* 1. zmiana */
+  letter-spacing: 0.04em;        /* 2. zmiana */
+}
+
+.app-title {
+  font-weight: 500;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.app-main {
+  max-width: 1000px;
+  margin: 24px auto;             /* 3. zmiana wyglądu layoutu */
+  padding: 24px;                 /* 4. zmiana */
+}

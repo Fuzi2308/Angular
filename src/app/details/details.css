@@ -1,0 +1,9 @@
+/* src/app/details/details.css */
+.details-card {
+  border-radius: 12px;            /* 1. zmiana */
+  margin-top: 16px;               /* 2. zmiana */
+}
+
+.details-card h3 {
+  margin-top: 16px;               /* 3. zmiana */
+}

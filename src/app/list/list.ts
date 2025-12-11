@@ -4,10 +4,22 @@ import { RouterLink } from '@angular/router';
 import { PersonService } from '../person.service';
 import { Person } from '../person';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [
+    CommonModule,
+    RouterLink,
+    MatCardModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
+  ],
   templateUrl: './list.html',
   styleUrl: './list.css',
 })
@@ -17,15 +29,11 @@ export class ListComponent implements OnInit {
   constructor(private personService: PersonService) {}
 
   ngOnInit(): void {
-    this.loadPersons();
-  }
-
-  loadPersons(): void {
     this.persons = this.personService.getAll();
   }
 
   delete(index: number): void {
     this.personService.delete(index);
-    this.loadPersons();
+    this.persons = this.personService.getAll();
   }
 }

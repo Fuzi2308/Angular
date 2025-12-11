@@ -1,3 +1,12 @@
-<h2>404 - Nie znaleziono strony</h2>
-<p>Ścieżka jest niepoprawna.</p>
-<p><a routerLink="/">Przejdź do listy osób</a></p>
+<!-- src/app/not-found/not-found.html -->
+<mat-card class="not-found-card">
+  <mat-card-title>404 - Nie znaleziono strony</mat-card-title>
+  <mat-card-content>
+    <p>Ścieżka jest niepoprawna.</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" routerLink="/">
+      Przejdź do listy osób
+    </button>
+  </mat-card-actions>
+</mat-card>

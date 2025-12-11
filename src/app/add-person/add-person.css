@@ -1,0 +1,40 @@
+/* src/app/add-person/add-person.css */
+
+.form-card {
+  max-width: 640px;
+  margin: 0 auto;
+  border-radius: 16px;                  /* 1. zmiana */
+  padding-bottom: 16px;                 /* 2. zmiana */
+}
+
+.person-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;                            /* 3. zmiana */
+}
+
+@media (min-width: 768px) {
+  .person-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+mat-form-field {
+  width: 100%;                          /* 4. zmiana */
+}
+
+.form-actions button[mat-stroked-button] {
+  text-transform: none;                 /* 5. zmiana */
+}
+
+.form-actions button[mat-raised-button] {
+  font-weight: 600;                     /* 6. zmiana */
+}

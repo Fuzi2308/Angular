@@ -1,9 +1,14 @@
-<header>
-  <h1>Person Manager</h1>
-  <p>Prosta aplikacja z routingiem i LocalStorage</p>
-  <hr />
-</header>
+<!-- src/app/app.html -->
+<mat-toolbar color="primary" class="app-toolbar">
+  <span class="app-title">Person Manager</span>
+  <span class="spacer"></span>
 
-<main>
+  <button mat-button routerLink="/">Lista osób</button>
+  <button mat-raised-button color="accent" routerLink="/add">
+    Dodaj osobę
+  </button>
+</mat-toolbar>
+
+<main class="app-main">
   <router-outlet></router-outlet>
 </main>
